@@ -171,7 +171,7 @@ func (x *AuthResponse) GetAccessToken() string {
 
 type UserInfoRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        *uint32                `protobuf:"varint,1,opt,name=user_id,json=userId" json:"user_id,omitempty"`
+	Id            *uint32                `protobuf:"varint,1,opt,name=id" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -206,9 +206,9 @@ func (*UserInfoRequest) Descriptor() ([]byte, []int) {
 	return file_queen_ant_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *UserInfoRequest) GetUserId() uint32 {
-	if x != nil && x.UserId != nil {
-		return *x.UserId
+func (x *UserInfoRequest) GetId() uint32 {
+	if x != nil && x.Id != nil {
+		return *x.Id
 	}
 	return 0
 }
@@ -277,9 +277,9 @@ const file_queen_ant_proto_rawDesc = "" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\"1\n" +
 	"\fAuthResponse\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"*\n" +
-	"\x0fUserInfoRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\rR\x06userId\"8\n" +
+	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"!\n" +
+	"\x0fUserInfoRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\rR\x02id\"8\n" +
 	"\x10UserInfoResponse\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email2\x95\x01\n" +

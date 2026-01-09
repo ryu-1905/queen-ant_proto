@@ -23,7 +23,7 @@ message AuthResponse {
 }
 
 message UserInfoRequest {
-  uint32 user_id = 1;
+  uint32 id = 1;
 }
 
 message UserInfoResponse {
