@@ -127,7 +127,8 @@ func (x *LoginRequest) GetPassword() string {
 
 type AuthResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	AccessToken   *string                `protobuf:"bytes,1,opt,name=access_token,json=accessToken" json:"access_token,omitempty"`
+	UserId        *uint32                `protobuf:"varint,1,opt,name=user_id,json=userId" json:"user_id,omitempty"`
+	AccessToken   *string                `protobuf:"bytes,2,opt,name=access_token,json=accessToken" json:"access_token,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -160,6 +161,13 @@ func (x *AuthResponse) ProtoReflect() protoreflect.Message {
 // Deprecated: Use AuthResponse.ProtoReflect.Descriptor instead.
 func (*AuthResponse) Descriptor() ([]byte, []int) {
 	return file_queen_ant_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *AuthResponse) GetUserId() uint32 {
+	if x != nil && x.UserId != nil {
+		return *x.UserId
+	}
+	return 0
 }
 
 func (x *AuthResponse) GetAccessToken() string {
@@ -275,9 +283,10 @@ const file_queen_ant_proto_rawDesc = "" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\"@\n" +
 	"\fLoginRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
-	"\bpassword\x18\x02 \x01(\tR\bpassword\"1\n" +
-	"\fAuthResponse\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"!\n" +
+	"\bpassword\x18\x02 \x01(\tR\bpassword\"J\n" +
+	"\fAuthResponse\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\rR\x06userId\x12!\n" +
+	"\faccess_token\x18\x02 \x01(\tR\vaccessToken\"!\n" +
 	"\x0fUserInfoRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\"8\n" +
 	"\x10UserInfoResponse\x12\x0e\n" +

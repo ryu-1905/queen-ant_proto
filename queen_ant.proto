@@ -19,7 +19,8 @@ message LoginRequest {
 }
 
 message AuthResponse {
-  string access_token = 1;
+  uint32 user_id = 1;
+  string access_token = 2;
 }
 
 message UserInfoRequest {
