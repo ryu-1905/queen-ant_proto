@@ -177,6 +177,94 @@ func (x *AuthResponse) GetAccessToken() string {
 	return ""
 }
 
+type VerifyAccessTokenRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AccessToken   *string                `protobuf:"bytes,1,opt,name=access_token,json=accessToken" json:"access_token,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyAccessTokenRequest) Reset() {
+	*x = VerifyAccessTokenRequest{}
+	mi := &file_queen_ant_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyAccessTokenRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyAccessTokenRequest) ProtoMessage() {}
+
+func (x *VerifyAccessTokenRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_queen_ant_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyAccessTokenRequest.ProtoReflect.Descriptor instead.
+func (*VerifyAccessTokenRequest) Descriptor() ([]byte, []int) {
+	return file_queen_ant_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *VerifyAccessTokenRequest) GetAccessToken() string {
+	if x != nil && x.AccessToken != nil {
+		return *x.AccessToken
+	}
+	return ""
+}
+
+type VerifyAccessTokenResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Valid         *bool                  `protobuf:"varint,1,opt,name=valid" json:"valid,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyAccessTokenResponse) Reset() {
+	*x = VerifyAccessTokenResponse{}
+	mi := &file_queen_ant_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyAccessTokenResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyAccessTokenResponse) ProtoMessage() {}
+
+func (x *VerifyAccessTokenResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_queen_ant_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyAccessTokenResponse.ProtoReflect.Descriptor instead.
+func (*VerifyAccessTokenResponse) Descriptor() ([]byte, []int) {
+	return file_queen_ant_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *VerifyAccessTokenResponse) GetValid() bool {
+	if x != nil && x.Valid != nil {
+		return *x.Valid
+	}
+	return false
+}
+
 type UserInfoRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            *uint32                `protobuf:"varint,1,opt,name=id" json:"id,omitempty"`
@@ -186,7 +274,7 @@ type UserInfoRequest struct {
 
 func (x *UserInfoRequest) Reset() {
 	*x = UserInfoRequest{}
-	mi := &file_queen_ant_proto_msgTypes[3]
+	mi := &file_queen_ant_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -198,7 +286,7 @@ func (x *UserInfoRequest) String() string {
 func (*UserInfoRequest) ProtoMessage() {}
 
 func (x *UserInfoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_queen_ant_proto_msgTypes[3]
+	mi := &file_queen_ant_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -211,7 +299,7 @@ func (x *UserInfoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserInfoRequest.ProtoReflect.Descriptor instead.
 func (*UserInfoRequest) Descriptor() ([]byte, []int) {
-	return file_queen_ant_proto_rawDescGZIP(), []int{3}
+	return file_queen_ant_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UserInfoRequest) GetId() uint32 {
@@ -231,7 +319,7 @@ type UserInfoResponse struct {
 
 func (x *UserInfoResponse) Reset() {
 	*x = UserInfoResponse{}
-	mi := &file_queen_ant_proto_msgTypes[4]
+	mi := &file_queen_ant_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -243,7 +331,7 @@ func (x *UserInfoResponse) String() string {
 func (*UserInfoResponse) ProtoMessage() {}
 
 func (x *UserInfoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_queen_ant_proto_msgTypes[4]
+	mi := &file_queen_ant_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -256,7 +344,7 @@ func (x *UserInfoResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserInfoResponse.ProtoReflect.Descriptor instead.
 func (*UserInfoResponse) Descriptor() ([]byte, []int) {
-	return file_queen_ant_proto_rawDescGZIP(), []int{4}
+	return file_queen_ant_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *UserInfoResponse) GetId() uint32 {
@@ -286,15 +374,20 @@ const file_queen_ant_proto_rawDesc = "" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\"J\n" +
 	"\fAuthResponse\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\rR\x06userId\x12!\n" +
-	"\faccess_token\x18\x02 \x01(\tR\vaccessToken\"!\n" +
+	"\faccess_token\x18\x02 \x01(\tR\vaccessToken\"=\n" +
+	"\x18VerifyAccessTokenRequest\x12!\n" +
+	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"1\n" +
+	"\x19VerifyAccessTokenResponse\x12\x14\n" +
+	"\x05valid\x18\x01 \x01(\bR\x05valid\"!\n" +
 	"\x0fUserInfoRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\"8\n" +
 	"\x10UserInfoResponse\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x14\n" +
-	"\x05email\x18\x02 \x01(\tR\x05email2\x95\x01\n" +
+	"\x05email\x18\x02 \x01(\tR\x05email2\xe1\x01\n" +
 	"\vUserService\x12+\n" +
 	"\bRegister\x12\x10.RegisterRequest\x1a\r.AuthResponse\x12%\n" +
-	"\x05Login\x12\r.LoginRequest\x1a\r.AuthResponse\x122\n" +
+	"\x05Login\x12\r.LoginRequest\x1a\r.AuthResponse\x12J\n" +
+	"\x11VerifyAccessToken\x12\x19.VerifyAccessTokenRequest\x1a\x1a.VerifyAccessTokenResponse\x122\n" +
 	"\vGetUserInfo\x12\x10.UserInfoRequest\x1a\x11.UserInfoResponseB\x12Z\x10queen-ant_proto/b\beditionsp\xe8\a"
 
 var (
@@ -309,23 +402,27 @@ func file_queen_ant_proto_rawDescGZIP() []byte {
 	return file_queen_ant_proto_rawDescData
 }
 
-var file_queen_ant_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_queen_ant_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_queen_ant_proto_goTypes = []any{
-	(*RegisterRequest)(nil),  // 0: RegisterRequest
-	(*LoginRequest)(nil),     // 1: LoginRequest
-	(*AuthResponse)(nil),     // 2: AuthResponse
-	(*UserInfoRequest)(nil),  // 3: UserInfoRequest
-	(*UserInfoResponse)(nil), // 4: UserInfoResponse
+	(*RegisterRequest)(nil),           // 0: RegisterRequest
+	(*LoginRequest)(nil),              // 1: LoginRequest
+	(*AuthResponse)(nil),              // 2: AuthResponse
+	(*VerifyAccessTokenRequest)(nil),  // 3: VerifyAccessTokenRequest
+	(*VerifyAccessTokenResponse)(nil), // 4: VerifyAccessTokenResponse
+	(*UserInfoRequest)(nil),           // 5: UserInfoRequest
+	(*UserInfoResponse)(nil),          // 6: UserInfoResponse
 }
 var file_queen_ant_proto_depIdxs = []int32{
 	0, // 0: UserService.Register:input_type -> RegisterRequest
 	1, // 1: UserService.Login:input_type -> LoginRequest
-	3, // 2: UserService.GetUserInfo:input_type -> UserInfoRequest
-	2, // 3: UserService.Register:output_type -> AuthResponse
-	2, // 4: UserService.Login:output_type -> AuthResponse
-	4, // 5: UserService.GetUserInfo:output_type -> UserInfoResponse
-	3, // [3:6] is the sub-list for method output_type
-	0, // [0:3] is the sub-list for method input_type
+	3, // 2: UserService.VerifyAccessToken:input_type -> VerifyAccessTokenRequest
+	5, // 3: UserService.GetUserInfo:input_type -> UserInfoRequest
+	2, // 4: UserService.Register:output_type -> AuthResponse
+	2, // 5: UserService.Login:output_type -> AuthResponse
+	4, // 6: UserService.VerifyAccessToken:output_type -> VerifyAccessTokenResponse
+	6, // 7: UserService.GetUserInfo:output_type -> UserInfoResponse
+	4, // [4:8] is the sub-list for method output_type
+	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -342,7 +439,7 @@ func file_queen_ant_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_queen_ant_proto_rawDesc), len(file_queen_ant_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

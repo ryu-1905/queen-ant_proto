@@ -5,6 +5,7 @@ option go_package = "queen-ant_proto/";
 service UserService {
   rpc Register(RegisterRequest) returns (AuthResponse);
   rpc Login(LoginRequest) returns (AuthResponse);
+  rpc VerifyAccessToken(VerifyAccessTokenRequest) returns (VerifyAccessTokenResponse);
   rpc GetUserInfo(UserInfoRequest) returns (UserInfoResponse);
 }
 
@@ -21,6 +22,14 @@ message LoginRequest {
 message AuthResponse {
   uint32 user_id = 1;
   string access_token = 2;
+}
+
+message VerifyAccessTokenRequest {
+  string access_token = 1;
+}
+
+message VerifyAccessTokenResponse {
+  bool valid = 1;
 }
 
 message UserInfoRequest {
